@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is Retrieval-Augmented Generation (RAG)?",
+    "ground_truth": "RAG is a technique that combines information retrieval with language model generation. It retrieves relevant documents from a knowledge base and uses them as context for the LLM to generate accurate, grounded answers."
+  },
+  {
+    "question": "How does hybrid search work in RAG systems?",
+    "ground_truth": "Hybrid search combines dense retrieval (semantic/vector search) with sparse retrieval (BM25/keyword search). Results from both methods are merged using techniques like Reciprocal Rank Fusion (RRF) to get better coverage than either method alone."
+  },
+  {
+    "question": "What is the purpose of a cross-encoder reranker?",
+    "ground_truth": "A cross-encoder reranker takes candidate chunks from the initial retrieval and scores each one by encoding the query and document together, capturing fine-grained interactions. It improves precision by selecting the most relevant chunks from a larger candidate set."
+  },
+  {
+    "question": "How does HyDE improve retrieval quality?",
+    "ground_truth": "HyDE (Hypothetical Document Embeddings) generates a hypothetical answer to the query using an LLM, then uses that hypothetical document for embedding-based search instead of the original short query. This produces better embeddings because the hypothetical answer uses vocabulary similar to actual documents."
+  },
+  {
+    "question": "What caching strategies can be used in a RAG pipeline?",
+    "ground_truth": "RAG pipelines can cache at multiple levels: query-result caching (storing answers for repeated questions), embedding caching (avoiding recomputation of document embeddings), and LLM response caching. Redis is commonly used with TTL-based expiration to keep cached results fresh."
+  }
+]

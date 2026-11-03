@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rag-config
+data:
+  QDRANT_HOST: "qdrant-service"
+  QDRANT_PORT: "6333"
+  REDIS_HOST: "redis-service"
+  REDIS_PORT: "6379"
+  COLLECTION_NAME: "rag_documents"
+  CHUNK_SIZE: "800"
+  CHUNK_OVERLAP: "100"
+  LLM_MODEL: "gpt-4o-mini"
+  EMBEDDING_MODEL: "text-embedding-3-small"

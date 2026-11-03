@@ -1,0 +1,23 @@
+# Environment
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Data
+data/*
+!data/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Model cache
+models/

@@ -1,0 +1,38 @@
+# Core
+langchain==0.3.7
+langchain-openai==0.2.9
+langchain-community==0.3.7
+openai==1.54.4
+
+# Vector DB
+qdrant-client==1.12.1
+
+# Document loading
+pypdf2==3.0.1
+python-docx==1.1.2
+beautifulsoup4==4.12.3
+
+# BM25
+rank-bm25==0.2.2
+
+# Re-ranking
+sentence-transformers==3.3.0
+
+# Cache
+redis==5.2.1
+
+# API
+fastapi==0.115.4
+uvicorn==0.32.0
+python-multipart==0.0.12
+
+# Frontend
+streamlit==1.40.0
+
+# Evaluation
+ragas==0.2.6
+
+# Utils
+python-dotenv==1.0.1
+pydantic==2.9.2
+pydantic-settings==2.6.1
