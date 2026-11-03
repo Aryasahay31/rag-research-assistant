@@ -1,22 +1,52 @@
 [
   {
-    "question": "What is Retrieval-Augmented Generation (RAG)?",
-    "ground_truth": "RAG is a technique that combines information retrieval with language model generation. It retrieves relevant documents from a knowledge base and uses them as context for the LLM to generate accurate, grounded answers."
+    "question": "What is hybrid search in RAG?",
+    "ground_truth": "Hybrid search combines vector search (semantic) with keyword search (BM25) to capture both meaning and exact terms, resulting in better accuracy and recall.",
+    "ground_truth_context": "hybrid search combines vector search and keyword search"
   },
   {
-    "question": "How does hybrid search work in RAG systems?",
-    "ground_truth": "Hybrid search combines dense retrieval (semantic/vector search) with sparse retrieval (BM25/keyword search). Results from both methods are merged using techniques like Reciprocal Rank Fusion (RRF) to get better coverage than either method alone."
+    "question": "How does cross-encoder reranking work?",
+    "ground_truth": "Cross-encoder reranking scores each retrieved passage against the query jointly using a cross-encoder model, providing more accurate relevance scores than bi-encoders by considering query and document together.",
+    "ground_truth_context": "cross-encoder reranking improves the order of retrieved results"
   },
   {
-    "question": "What is the purpose of a cross-encoder reranker?",
-    "ground_truth": "A cross-encoder reranker takes candidate chunks from the initial retrieval and scores each one by encoding the query and document together, capturing fine-grained interactions. It improves precision by selecting the most relevant chunks from a larger candidate set."
+    "question": "What is Reciprocal Rank Fusion?",
+    "ground_truth": "Reciprocal Rank Fusion (RRF) is a technique to merge results from multiple retrievers by combining their rankings, giving each result a score based on its rank position across all retrievers.",
+    "ground_truth_context": "reciprocal rank fusion"
   },
   {
-    "question": "How does HyDE improve retrieval quality?",
-    "ground_truth": "HyDE (Hypothetical Document Embeddings) generates a hypothetical answer to the query using an LLM, then uses that hypothetical document for embedding-based search instead of the original short query. This produces better embeddings because the hypothetical answer uses vocabulary similar to actual documents."
+    "question": "What are the common chunking strategies for documents?",
+    "ground_truth": "Common chunking strategies include fixed-size chunking, recursive character splitting, sentence-based splitting, and semantic chunking. Chunk size and overlap are key parameters.",
+    "ground_truth_context": "chunking"
   },
   {
-    "question": "What caching strategies can be used in a RAG pipeline?",
-    "ground_truth": "RAG pipelines can cache at multiple levels: query-result caching (storing answers for repeated questions), embedding caching (avoiding recomputation of document embeddings), and LLM response caching. Redis is commonly used with TTL-based expiration to keep cached results fresh."
+    "question": "How do embeddings work in RAG?",
+    "ground_truth": "Embeddings convert text into dense numerical vectors that capture semantic meaning. Similar texts have vectors close together in the embedding space, enabling semantic similarity search.",
+    "ground_truth_context": "embeddings"
+  },
+  {
+    "question": "What is HyDE in the context of RAG?",
+    "ground_truth": "HyDE (Hypothetical Document Embeddings) generates a hypothetical answer to the query first, then uses that hypothetical document to retrieve similar real documents, improving recall for vague queries.",
+    "ground_truth_context": "hypothetical document embeddings"
+  },
+  {
+    "question": "What are the evaluation metrics for RAG systems?",
+    "ground_truth": "Key RAG evaluation metrics include faithfulness, answer relevancy, context precision, and context recall. These measure whether the answer is grounded in context, relevant to the question, and whether retrieval found the right passages.",
+    "ground_truth_context": "evaluation metrics"
+  },
+  {
+    "question": "How can you reduce hallucinations in RAG?",
+    "ground_truth": "Hallucinations can be reduced by improving retrieval quality, using reranking to filter irrelevant chunks, grounding answers in retrieved context, and using prompt engineering to instruct the model to only use provided information.",
+    "ground_truth_context": "hallucination"
+  },
+  {
+    "question": "What is the role of vector databases in RAG?",
+    "ground_truth": "Vector databases store document embeddings and enable fast similarity search. They support approximate nearest neighbor search for retrieving semantically similar documents to a query.",
+    "ground_truth_context": "vector database"
+  },
+  {
+    "question": "What are the challenges of deploying RAG in production?",
+    "ground_truth": "Production RAG challenges include managing latency, scaling retrieval, handling document updates, monitoring retrieval quality, caching strategies, and ensuring answer accuracy and consistency.",
+    "ground_truth_context": "production"
   }
 ]
