@@ -165,3 +165,15 @@ This measures per-stage latency (embedding, retrieval, reranking, generation) ac
 ## License
 
 MIT
+## Benchmark Results
+
+Evaluated on 10 questions from RAG_Study_Notes.pdf
+
+| Configuration | Context Precision | Context Recall | Faithfulness | Answer Relevancy | Avg Latency |
+|---|---|---|---|---|---|
+| Baseline (semantic only) | 0.440 | 0.703 | 0.826 | 0.631 | 37.7s |
+| + Hybrid (BM25 + RRF) | 0.400 | 0.711 | 0.924 | 0.720 | 36.3s |
+| + Reranking | 0.420 | 0.722 | 0.957 | 0.643 | 39.7s |
+| + HyDE | 0.440 | 0.701 | 0.932 | 0.652 | 63.2s |
+
+Metrics computed locally using sentence-transformers (no paid API).
